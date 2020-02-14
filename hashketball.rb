@@ -307,3 +307,20 @@ def player_with_longest_name
     end
   end
 end
+
+def long_name_steals(team_to_find)
+  # takes in team name to search and returns array of jersey numbers for that team
+  player_numbers = []
+  game_hash.each do |away_home, team|
+    if team[:team_name] == team_to_find
+      team.each do |attributes, data|
+        if attributes == :players
+          data.each do |player_info|
+            player_numbers << player_info[:number]
+          end
+        end
+      end 
+    end 
+  end
+  player_numbers
+end   

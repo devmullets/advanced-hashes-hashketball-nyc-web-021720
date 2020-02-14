@@ -271,8 +271,14 @@ def winning_team
           end 
         end
       end 
+    else 
+      team.each do |team_info, data|
+        if team_info == :players 
+          data.each do |player_info|
+            away_team_score += player_info[:points]
     end    
   end       
   
   puts home_team_score
+  puts away_team_score
 end

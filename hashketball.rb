@@ -276,6 +276,9 @@ def winning_team
         if team_info == :players 
           data.each do |player_info|
             away_team_score += player_info[:points]
+          end 
+        end   
+      end 
     end    
   end       
   

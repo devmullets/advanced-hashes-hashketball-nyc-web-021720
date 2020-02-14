@@ -265,8 +265,14 @@ def winning_team
   game_hash.each do |home_away, team|
     if home_away == :home
       team.each do |team_info, data|
-        puts "hi"
+        if team_info == :players 
+          data.each do |player_info|
+            home_team_score += player_info[:points]
+          end 
+        end
       end 
     end    
   end       
+  
+  puts home_team_score
 end

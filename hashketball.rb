@@ -282,6 +282,10 @@ def winning_team
     end    
   end       
   
-  puts home_team_score
-  puts away_team_score
+  if home_team_score > away_team_score
+    return game_hash[:home][:team_name]
+  else 
+    return game_hash[:away][:team_name]
+  end 
+  
 end

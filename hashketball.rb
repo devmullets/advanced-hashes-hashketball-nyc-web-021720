@@ -287,5 +287,21 @@ def winning_team
   else 
     return game_hash[:away][:team_name]
   end 
-  
+end
+
+def player_with_longest_name
+  name_length = 0 
+  player_long_name = ""
+    # go thru each hash
+  game_hash.each do |away_home, team|
+      # team will give { :team_name // :colors // :players }
+      # so we want to iterate until we get to { :players } which contains array of hashes
+    team.each do |attribute, data|
+      if attribute == :players #means we found { :players }
+        data.each do |player|
+          player[:player_name]
+        end
+      end
+    end
+  end
 end
